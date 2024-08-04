@@ -2,9 +2,9 @@ name: Build and Push Docker Image to Docker Hub
 
 on:
   push:
-    branches: [ "dev", "main" ]
+    branches: [ "main", "latest" ]
   pull_request:
-    branches: [ "dev", "main" ]
+    branches: [ "main", "latest" ]
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -40,5 +40,5 @@ jobs:
         with:
           context: "{{defaultContext}}"
           push: true
-          tags: latest
+          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
