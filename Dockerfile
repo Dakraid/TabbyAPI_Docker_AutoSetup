@@ -1,3 +1,4 @@
+# Version 1.0.0
 # Use an official CUDA runtime with Ubuntu as a parent image
 FROM nvidia/cuda:12.4.1-runtime-ubuntu22.04
 
