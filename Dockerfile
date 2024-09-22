@@ -9,6 +9,7 @@ ENV DOWNLOAD_MODEL=true
 ENV MODEL_REPO=MikeRoz/NeverSleep_Lumimaid-v0.2-123B-5.0bpw-h8-exl2
 ENV MODEL_NAME=MikeRoz_NeverSleep_Lumimaid-v0.2-123B-5.0bpw-h8-exl2
 
+ENV ALWAYS_FETCH_CONFIG=false
 ENV CONFIG_URL=https://raw.githubusercontent.com/Dakraid/TabbyAPI_Docker_Config/main/config.yml
 
 ARG DO_PULL=true
