@@ -1,4 +1,12 @@
 #!bin/sh
+if [ "$ALWAYS_FETCH_CONFIG" = "true" ]; then
+    curl -o --clobber config.yml "$CONFIG_URL"
+fi
+
+if [ "$LOAD_CUSTOM_JINJA" = "true" ]; then
+    curl -o --clobber templates/custom.jinja "$JINJA_URL"
+fi
+
 if [ "$DOWNLOAD_MODEL" = "true" ]; then
     if [ -d "./models/$MODEL_NAME" ]; then
         echo "Model is already downloaded, skipping."
@@ -14,14 +22,6 @@ if [ "$DOWNLOAD_MODEL" = "true" ]; then
         echo "Failed to update model_name in config.yml"
         exit 1
     fi
-fi
-
-if [ "$ALWAYS_FETCH_CONFIG" = "true" ]; then
-    curl -o --clobber config.yml "$CONFIG_URL"
-fi
-
-if [ "$LOAD_CUSTOM_JINJA" = "true" ]; then
-    curl -o --clobber templates/custom.jinja "$JINJA_URL"
 fi
 
 if [ -n "$ADMIN_KEY" ] && [ -n "$API_KEY" ]; then
