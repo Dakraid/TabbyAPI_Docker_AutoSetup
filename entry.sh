@@ -1,10 +1,10 @@
 #!bin/sh
 if [ "$ALWAYS_FETCH_CONFIG" = "true" ]; then
-    curl -o --clobber config.yml "$CONFIG_URL"
+    curl "$CONFIG_URL" > config.yml
 fi
 
 if [ "$LOAD_CUSTOM_JINJA" = "true" ]; then
-    curl -o --clobber templates/custom.jinja "$JINJA_URL"
+    curl "$JINJA_URL" > templates/custom.jinja
 fi
 
 if [ "$DOWNLOAD_MODEL" = "true" ]; then
