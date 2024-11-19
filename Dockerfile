@@ -1,4 +1,4 @@
-# Version 1.0.2
+# Version 1.0.3
 # Use an official CUDA runtime with Ubuntu as a parent image
 FROM nvidia/cuda:12.4.1-runtime-ubuntu22.04
 
@@ -9,8 +9,11 @@ ENV DOWNLOAD_MODEL=true
 ENV MODEL_REPO=MikeRoz/NeverSleep_Lumimaid-v0.2-123B-5.0bpw-h8-exl2
 ENV MODEL_NAME=MikeRoz_NeverSleep_Lumimaid-v0.2-123B-5.0bpw-h8-exl2
 
-ENV ALWAYS_FETCH_CONFIG=false
+ENV ALWAYS_FETCH_CONFIG=true
 ENV CONFIG_URL=https://raw.githubusercontent.com/Dakraid/TabbyAPI_Docker_Config/main/config.yml
+
+ENV LOAD_CUSTOM_JINJA=true
+ENV JINJA_URL=https://raw.githubusercontent.com/Dakraid/TabbyAPI_Docker_Config/refs/heads/main/custom.jinja
 
 ARG DO_PULL=true
 ARG GIT_REPO=https://github.com/theroyallab/tabbyAPI
@@ -38,7 +41,12 @@ RUN if [ ${DO_PULL} ]; then \
     git pull origin main && \
     echo "Pull finished"; fi
 
-RUN curl -o config.yml "$CONFIG_URL"
+
+#RUN if [ ${ALWAYS_FETCH_CONFIG} ]; then \
+#    curl -o config.yml "$CONFIG_URL"
+
+#RUN if [ ${LOAD_CUSTOM_JINJA} ]; then \
+#    curl -o templates/custom.jinja "$JINJA_URL"
 
 # Upgrade pip
 RUN pip3 install --no-cache-dir --upgrade pip

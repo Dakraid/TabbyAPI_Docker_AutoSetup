@@ -20,6 +20,10 @@ if [ "$ALWAYS_FETCH_CONFIG" = "true" ]; then
     curl -o --clobber config.yml "$CONFIG_URL"
 fi
 
+if [ "$LOAD_CUSTOM_JINJA" = "true" ]; then
+    curl -o --clobber templates/custom.jinja "$JINJA_URL"
+fi
+
 if [ -n "$ADMIN_KEY" ] && [ -n "$API_KEY" ]; then
     > api_tokens.yml
     echo "admin_key: $ADMIN_KEY" >> api_tokens.yml
