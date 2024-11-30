@@ -6,8 +6,8 @@ ENV ADMIN_KEY=setMe
 ENV API_KEY=setMe
 
 ENV DOWNLOAD_MODEL=true
-ENV MODEL_REPO=MikeRoz/NeverSleep_Lumimaid-v0.2-123B-5.0bpw-h8-exl2
-ENV MODEL_NAME=MikeRoz_NeverSleep_Lumimaid-v0.2-123B-5.0bpw-h8-exl2
+ENV MODEL_REPO=FluffyKaeloky/Cakrawala-123B-exl2-4.0bpw
+ENV MODEL_NAME=FluffyKaeloky_Cakrawala-123B-exl2-4.0bpw
 
 ENV ALWAYS_FETCH_CONFIG=true
 ENV CONFIG_URL=https://raw.githubusercontent.com/Dakraid/TabbyAPI_Docker_Config/main/config.yml
