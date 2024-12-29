@@ -6,8 +6,8 @@ ENV ADMIN_KEY=setMe
 ENV API_KEY=setMe
 
 ENV DOWNLOAD_MODEL=true
-ENV MODEL_REPO=gghfez/Writer-Large-2411-v2.1
-ENV MODEL_NAME=gghfez_Writer-Large-2411-v2.1
+ENV MODEL_REPO=gghfez/Writer-Large-2411-v2.1-exl2-4.5bpw
+ENV MODEL_NAME=gghfez_Writer-Large-2411-v2.1-exl2-4.5bpw
 
 ENV ALWAYS_FETCH_CONFIG=true
 ENV CONFIG_URL=https://raw.githubusercontent.com/Dakraid/TabbyAPI_Docker_Config/main/config.yml
